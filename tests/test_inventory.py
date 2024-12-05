@@ -1,4 +1,5 @@
 # test_inventory.py
+# Unit tests for the InventoryManagement class.
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -10,16 +11,19 @@ from medication_management.medication import Medication
 from medication_management.inventory import InventoryManagement
 
 class MockReminderSystem:
+    """Mock reminder system to simulate reminders without an actual implementation."""
     def __init__(self):
         self.reminders = {}
 
     def set_reminder(self, member, med_id, message):
+        """Set a reminder for a specific member and medication ID."""
         if member not in self.reminders:
             self.reminders[member] = {}
         self.reminders[member][med_id] = message
         print(f"Reminder set: {message}")
 
     def clear_reminder(self, member, med_id):
+        """Clear a reminder for a specific member and medication ID."""
         if member in self.reminders and med_id in self.reminders[member]:
             del self.reminders[member][med_id]
             print(f"Cleared reminder for {member} - Medication ID {med_id}")
@@ -27,6 +31,7 @@ class MockReminderSystem:
 class TestInventory(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        """Set up shared resources for all tests in the class."""
         print("\nSetting up TestInventory class...")
         cls.base_dir = Path("./test_data")
         cls.base_dir.mkdir(exist_ok=True)
@@ -36,6 +41,7 @@ class TestInventory(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
+        """Clean up shared resources after all tests in the class."""
         print("\nCleaning up TestInventory class...")
         try:
             if cls.base_dir.exists():
@@ -44,6 +50,7 @@ class TestInventory(unittest.TestCase):
             print(f"Warning: Could not clean up test directory: {e}")
 
     def setUp(self):
+        """Initialize resources for each test."""
         self.inventory = InventoryManagement(
             member_name="TestUser",
             base_dir=self.base_dir,
@@ -58,6 +65,7 @@ class TestInventory(unittest.TestCase):
         )
 
     def tearDown(self):
+        """Clean up resources after each test."""
         self.inventory = None
 
     def test_add_medication(self):

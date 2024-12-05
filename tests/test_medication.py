@@ -1,9 +1,12 @@
 # test_medication.py
+# Unit tests for the Medication class, focusing on initialization, stock updates, and days left calculation.
 import sys
 import os
+# Add the project's root directory to the Python module search path.
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import unittest
+# Import the Medication class to be tested.
 from medication_management.medication import Medication
 
 class TestMedication(unittest.TestCase):
@@ -11,8 +14,8 @@ class TestMedication(unittest.TestCase):
     def setUpClass(cls):
         """One-time setup for the entire class"""
         print("\nSetting up TestMedication class...")
-        cls.default_daily_dosage = 2
-        cls.default_stock = 20
+        cls.default_daily_dosage = 2 # Default daily dosage for test cases.
+        cls.default_stock = 20 # Default stock quantity for test cases.
 
     @classmethod
     def tearDownClass(cls):

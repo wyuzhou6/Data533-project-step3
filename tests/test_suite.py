@@ -1,9 +1,12 @@
 # test_suite.py
+# A script to aggregate and run all unit tests for the project.
 import sys
 import os
+# Add the project's root directory to the Python module search path.
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import unittest
+# Import all test classes to include in the test suite.
 from test_medication import TestMedication
 from test_prescription import TestPrescription
 from test_inventory import TestInventory
