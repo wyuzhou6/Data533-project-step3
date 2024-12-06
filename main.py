@@ -8,6 +8,12 @@ from medication_management.prescription import PrescriptionMedication
 
 BASE_DIR = Path(__file__).resolve().parent
 
+class InvalidMenuChoiceError(Exception):
+    """Custom exception for invalid menu choices."""
+    def __init__(self, choice):
+        super().__init__(f"Invalid menu choice: {choice}. Please enter a valid number from 1 to 12.")
+
+
 def initialize_system():
     """
     Initialize the FamilyMedT system.
@@ -230,6 +236,8 @@ def main():
 
             else:
                 print("Invalid choice. Please try again.")
+        except InvalidMenuChoiceError as e:
+            print(e)
 
         except KeyboardInterrupt:
              # Handle keyboard interrupt (Ctrl+C)
