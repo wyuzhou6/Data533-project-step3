@@ -1,5 +1,5 @@
 # test_suite.py
-# A script to aggregate and run all unit tests for the project.
+# A script to aggregate and run all unit tests for the project
 import sys
 import os
 # Add the project's root directory to the Python module search path.
