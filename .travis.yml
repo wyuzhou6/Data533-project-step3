@@ -1,6 +1,6 @@
 dist: focal
 language: python
 python:
-  - "3.11"
+  - "3.9"
 script:
   - pytest
