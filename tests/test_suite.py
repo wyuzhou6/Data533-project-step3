@@ -8,11 +8,11 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import unittest
 # Import all test classes to include in the test suite.
-from test_medication import TestMedication
-from test_prescription import TestPrescription
-from test_inventory import TestInventory
-from test_family import TestFamily
-from test_reminder import TestReminder
+from tests.test_medication import TestMedication
+from tests.test_prescription import TestPrescription
+from tests.test_inventory import TestInventory
+from tests.test_family import TestFamily
+from tests.test_reminder import TestReminder
 
 def create_test_suite():
     """Create and return a test suite containing all test cases"""
