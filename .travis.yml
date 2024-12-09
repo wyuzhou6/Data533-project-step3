@@ -2,5 +2,9 @@ dist: focal
 language: python
 python:
   - "3.9"
+env:
+  - PYTHONPATH=$PYTHONPATH:.
+install:
+  - pip install pytest pandas
 script:
   - pytest tests/test_suite.py
