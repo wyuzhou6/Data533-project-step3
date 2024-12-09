@@ -18,7 +18,7 @@ def create_test_suite():
     """Create and return a test suite containing all test cases"""
     suite = unittest.TestSuite()
     
-    # Add all test cases from each test class
+    # Add all test cases from each test class.
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(TestMedication))
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(TestPrescription))
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(TestInventory))
@@ -28,12 +28,12 @@ def create_test_suite():
     return suite
 
 if __name__ == '__main__':
-    # Create and run the test suite
+    # Create and run the test suite.
     suite = create_test_suite()
     runner = unittest.TextTestRunner(verbosity=2)
     result = runner.run(suite)
     
-    # Exit with appropriate status code
+    # Exit with appropriate status code.
     if result.wasSuccessful():
         exit(0)
     else:

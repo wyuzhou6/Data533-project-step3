@@ -34,7 +34,7 @@ class InventoryManagement:
         self.inventory_file = self.data_dir / f"{member_name}_inventory.csv"   # Define paths for inventory and history files
         self.history_file = self.data_dir / f"{member_name}_history.csv"
 
-        self.medications = {} # Initialize medication dictionary and ID tracker
+        self.medications = {} # Initialize medication dictionary and ID tracker.
         self.next_med_id = 1
         self._load_inventory() # Load inventory if it exists
 
