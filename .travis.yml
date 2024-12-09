@@ -3,4 +3,4 @@ language: python
 python:
   - "3.9"
 script:
-  - pytest
+  - pytest tests/test_suite.py
