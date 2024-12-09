@@ -6,7 +6,7 @@ class Medication:
     Attributes:
         name (str): The name of the medication.
         dosage (str): The dosage information (e.g., "500mg").
-        frequency (str): The frequency of intake (e.g., "2 times/day").
+        frequency (str): The frequency of intake (e.g., "2 times/day")
         daily_dosage (int): The daily dosage (number of units per day).
         stock (int): The current stock level.
     """
