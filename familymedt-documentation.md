@@ -41,7 +41,7 @@ FamilyMedT/
 ## Installation
 1. Clone the repository:
 ```bash
-git clone https://github.com/MDS-2024-Labs/project-step-1-wyuzhou6.git
+git clone https://github.com/wyuzhou6/Data533-project-step3.git
 cd FamilyMedT
 ```
 
